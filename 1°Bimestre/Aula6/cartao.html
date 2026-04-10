@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cartão</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+
+
+        .fonte {
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        
+        }
+
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .cartao {
+            width: 30%;
+            height: 300px;
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: palevioletred;
+            display: flex;
+            justify-content: space-between;
+            margin: 5%;
+            padding: 1%;
+            box-sizing: border-box;
+        }
+
+        .esquerda {
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            margin: 1%;
+        }
+
+        .direita {
+            width: 50%;
+            height: 100%;
+            box-sizing: border-box;
+            margin: 1%;
+            position: relative;
+        }
+
+        .titulo {
+            font-size: 30px;
+            margin-bottom: 5%;
+        }
+
+        .chip {
+            width: 35%;
+            height: 25%;
+            background-color: azure;
+            border: 1px solid gray;
+            border-radius: 20px;
+            margin-bottom: 10%;
+        }
+
+        .numero {
+            font-size: 20px;
+            margin-bottom: 4%;
+            
+        }
+
+        .data {
+            margin-bottom: 2%;
+        }
+
+        .bolinhas {
+            width: 60%;
+            height: 35%;
+            display: flex;
+            align-self: end;
+            position:absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .vermelha {
+            width: 50%;
+            height: 100%;
+            background-color: rgb(204, 18, 18);
+            border-radius: 50%;
+            margin-left: 10%;
+
+        }
+
+        .amarela {
+            width: 50%;
+            height: 100%;
+            background-color: rgba(255, 217, 0, 0.663);
+            border-radius: 50%;
+            position: absolute;
+            right: 10%;  
+        }
+
+        
+    </style>
+
+</head>
+<body>
+    <div class="cartao">
+
+
+        <div class="esquerda">
+
+            <div class="titulo">
+                <h3 class="fonte">business</h3>
+            </div>
+
+            <div class="chip">
+            </div>
+
+            <div class="numero">
+                <h3 class="fonte"> 5412 7512 3412 3456</h3>
+            </div>
+
+            <div class="validade">
+                <h4 class="fonte">Valid Thru</h4>
+            </div>
+
+            <div class="data">
+                <h3 class="fonte">12/23</h3>
+            </div>
+
+            <div class="proprietario">
+                <h3 class="fonte"> Isabella Heinz </h3>
+            </div>
+
+        </div>
+
+
+        <div class="direita">
+            <div class="bolinhas">
+                <div class="vermelha">
+
+                </div>
+                <div class="amarela"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
