@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css" rel="stylesheet"
+        type="text/css" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/froala-editor@latest/js/froala_editor.pkgd.min.js"></script>
+
+</head>
+
+<body>
+    <form action="processa.php">
+
+        <div class="grupo">
+            <label for="campoNome">nome:</label>
+            <input required id="campoNome" name="campoNome" type="text" placeholder="Informe um texto">
+
+        </div>
+
+        <div class="grupo">
+            <label for="campoTurnoM">
+                <input checked type="radio" id="campoTurnoM" name="campoTurno" value="manha"> Manhã
+            </label>
+
+            <label for="campoTurnoT">
+                <input type="radio" id="campoTurnoT" name="campoTurno" value="tarde"> Tarde
+            </label>
+
+            <label for="campoTurnoN">
+                <input type="radio" id="campoTurnoN" name="campoTurno" value="noite"> Noite
+            </label>
+
+        </div>
+
+        <div class="grupo">
+            <label for="campoComidaS">
+                <input checked type="checkbox" id="campoComidaS" name="campoTurno" value="salgado"> Salgado
+            </label>
+
+            <label for="campoComidaD">
+                <input type="checkbox" id="campoComidaD" name="campoTurno" value="doce"> Doce
+            </label>
+
+            <label for="campoComidaA">
+                <input type="checkbox" id="campoComidaA" name="campoTurno" value="agridoce"> Agridoce
+            </label>
+
+        </div>
+
+        <div class="grupo">
+
+            <label for="campoCor">cor: </label>
+            <select name="campoCor" id="">
+                <option value="vermelho">vermelho</option>
+                <option value="azul">azul</option>
+                <option value="amarelo">amarelo</option>
+            </select>
+        </div>
+        <!-- <input type="date">
+ 
+        <input type="color">
+
+        <input type="range"> -->
+
+        <div class="grupo">
+            <textarea name="Texto" id="Texto" rows="4" cols="50"></textarea>
+        </div>
+        <input type="submit">
+    </form>
+
+    <script>
+        new FroalaEditor("#Texto");
+    </script>
+
+</body>
+
+</html>
