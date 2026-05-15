@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safadometro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+
+    <form action="processador.php">
+
+        <div class="formulario" >
+            <h1 class="fonte">Safadometro <i class="bi bi-fire"></i></h1>
+
+            <p class="fonte">
+                Informe sua data de nascimento que te informaremos sua porcentagem de anjo e de safadeza! 
+            </p>
+
+            <div class="grupo">
+                <label  class="fonte" for="campoDia">Dia</label>
+                <input type="number" name="campoDia">
+            </div>
+
+            <div class="grupo">
+                <label  class="fonte" for="campoMes">Mes</label>
+                <input type="number" name="campoMes">
+            </div>
+
+            <div class="grupo">
+                <label class="fonte" for="campoAno">Ano</label>
+                <input type="number" name="campoAno">
+            </div>
+
+            <input class="fonte" type="submit" value="Enviar dados">
+        </div>
+
+    </form>
+
+
+
+</body>
+
+</html>
