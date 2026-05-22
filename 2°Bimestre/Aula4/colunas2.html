@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coluna</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+
+        .page {
+            background-color: aliceblue;
+            overflow: auto;
+            text-align: center;
+            border: 2px solid black;
+
+        }
+
+
+        .cabecalho {
+            width: 100%;
+            height: 150px;
+            padding: 20px;
+            border: 2px solid black;
+            
+        }
+
+        .coluna1 {
+            border: 2px solid black;
+            width: 25%;
+             padding: 20px;
+            height: calc(100vh - 300px);
+            float: left;
+            
+        }
+
+        .colunaCentral {
+            border: 2px solid black;
+            width: 50%;
+             padding: 20px;
+            height: calc(100vh - 300px);
+            float: left;
+            margin-left: 0%;
+        }
+
+        .coluna2{
+            border: 2px solid black;
+            width: 25%;
+             padding: 20px;
+            height: calc(100vh - 300px);
+            float: right;
+        }
+
+        .rodape {
+            
+             padding: 20px;
+            width: 100%;
+            height: 150px;
+            border: 2px solid black;
+            float: left;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="cabecalho">
+            <p>Cabeçalho</p>
+        </div>
+
+        <div class="coluna1">
+            <p>Coluna 1</p>
+        </div>
+
+        <div class="colunaCentral">
+            <p>Coluna Central</p>
+        </div>
+
+        <div class="coluna2">
+            <p>Coluna 2</p>
+        </div>
+
+        <div class="rodape">
+            <p>Rodapé</p>
+        </div>
+
+    </div>
+</body>
+</html>
