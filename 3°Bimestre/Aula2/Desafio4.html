@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 class="titulo">Isabella</h1>
+    <button class="botao">Clique Aqui</button>
+
+    <script>
+        let titulo = document.querySelector('.titulo');
+        let botao = document.querySelector('.botao');
+        let estadoFrase = 1;
+
+        botao.onclick = function (){
+
+            if(estadoFrase ==1 ){
+                 titulo.style.color = "pink";
+                titulo.style.fontSize = "90px";
+                titulo.textContent = "Isabella Heinz";
+
+                estadoFrase = 2;
+            } else {
+                titulo.style.color = "black";
+                titulo.style.fontSize = "40px";
+                titulo.textContent = "Isabella";
+
+                estadoFrase = 1;
+            }
+           
+            
+        }
+    </script>
+
+</body>
+</html>

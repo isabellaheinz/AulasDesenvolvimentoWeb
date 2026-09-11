@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img 
+    src="https://static.wikia.nocookie.net/disney/images/d/dd/Waddles_the_Pig.jpg/revision/latest?cb=20160710192404&path-prefix=pt-br" alt="">
+    
+    <p></p>
+
+    <script>
+
+        let paragrafo = document.querySelector('p')
+
+        let imagem = document.querySelector('img')
+
+        imagem.onclick = clicou;
+        imagem.onmouseenter = mouseEnter;
+        imagem.onmousemove = mouseMove;
+        imagem.onmousedown = mouseDown;
+        imagem.onmouseup = mouseUp;
+        imagem.onmouseleave = mouseLeave;
+
+        function clicou(){
+            paragrafo.textContent = "Para de me cutucar!";
+        }
+
+        function mouseEnter(){
+            paragrafo.textContent = "Para de me mousar!";
+        }
+
+        function mouseMove(){
+            paragrafo.textContent = "Para de me fazer carinho!";
+        }
+
+        function mouseDown(){
+            paragrafo.textContent = "Para de abaixar!";
+        }
+
+        function mouseUp(){
+            paragrafo.textContent = "Para de subir!";
+        }
+
+        function mouseLeave(){
+            paragrafo.textContent = "Não saia!";
+        }
+    </script>
+</body>
+</html>
