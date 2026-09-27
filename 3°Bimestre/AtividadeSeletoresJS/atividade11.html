@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 11</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 502px;
+            min-height: 550px;
+            border: 2px solid rgba(128, 128, 128, 0.199);
+            box-shadow: 0px 0px 4px  rgba(128, 128, 128, 0.199);
+            display: flex;
+            flex-direction: column;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        input {
+            width: 400px;
+            padding: 8px 20px;
+            border-radius: 10px;
+            border: 2px solid rgba(128, 128, 128, 0.199);
+            box-shadow: 0px 0px 4px  rgba(128, 128, 128, 0.199);
+            transition: all 0.5s;
+        }
+
+        div {
+            margin-bottom: 30px;
+        }
+
+        .campoNome {
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 8px 20px;
+            border-radius: 10px;
+            border: 2px solid rgba(128, 128, 128, 0.199);
+            box-shadow: 0px 0px 4px  rgba(128, 128, 128, 0.199);
+            transition: all 0.3s;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+
+        #mensagemNome, #mensagemEmail, #mensagemSenha, #mensagemConfirmacao{
+            color: rgb(201, 1, 1);
+        }
+
+        .olhoSenha, .olhoConf {
+            position: relative;
+        }
+
+        .campoSenha .olhoSenha #olho {
+            position: absolute;
+            top: 2px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .campoConfirmacao .olhoConf #olho2 {
+            position: absolute;
+            top: 2px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Cadastre-se</h1>
+        <div class="campoNome">
+            <h3>Nome:</h3>
+            <input id="nome" type="text"" value="" placeholder="Insira seu nome">
+            <p id="mensagemNome"></p>
+        </div>
+
+        <div class="campoEmail">
+            <h3>Email:</h3>
+            <input id="email" type="email" value="" placeholder="Insira seu email">
+            <p id="mensagemEmail"></p>
+        </div>
+
+        <div class="campoSenha">
+            <h3>Senha:</h3>
+
+            <span class="olhoSenha">
+                <input id="senha" type="password" value="" placeholder="Insira uma senha">
+                <p id="olho"><i class="bi bi-eye-fill"></i></p>
+            </span>
+            
+            <p id="mensagemSenha"></p>
+            
+        </div>
+
+        <div class="campoConfirmacao">
+            <h3>Confirme a senha: </h3>
+
+            <span class="olhoConf">
+                 <input id="confirmacao" type="password" value="" placeholder="Confirme sua senha"> 
+                 <p id="olho2"><i class="bi bi-eye-fill"></i></p>
+            </span>
+           
+            <p id="mensagemConfirmacao"></p>
+            
+        </div>
+
+        <button>Enviar</button>
+
+    </div>
+
+    <script>
+        const nome = document.querySelector("#nome");
+        const email = document.querySelector("#email");
+        const senha = document.querySelector("#senha");
+        const confirmacao = document.querySelector("#confirmacao");
+        const olho = document.querySelector("#olho");
+        const olhoConf = document.querySelector("#olho2");
+        const botao = document.querySelector("button");
+
+        const mensagemNome = document.querySelector("#mensagemNome");
+        const mensagemEmail = document.querySelector("#mensagemEmail");
+        const mensagemSenha = document.querySelector("#mensagemSenha");
+        const mensagemConfirmacao = document.querySelector("#mensagemConfirmacao");
+
+
+        nome.addEventListener('input', () => {
+
+            let infoNome = nome.value;
+
+            if(infoNome.length < 3) {
+                mensagemNome.innerText = "Informe mais que 3 caracteres."
+            } else {
+                mensagemNome.innerText = "";
+            }
+        })
+       
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        email.addEventListener('input', () => {
+        
+            let infoEmail = email.value;
+
+            if(!emailRegex.test(infoEmail)){ 
+                mensagemEmail.innerText = "Informe um email válido."
+            } else {
+                mensagemEmail.innerText = "";
+            }
+
+            // apenas para manter a padronização das verificações, coloquei o ! para entrar no if se o resultado for falso
+
+        })
+
+        const senhaRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/
+
+        senha.addEventListener('input', () => {
+
+            let infoSenha = senha.value;
+
+            if(!senhaRegex.test(infoSenha)){
+
+                mensagemSenha.innerText = "Sua senha deve conter  8 caracteres, uma letra maiúscula, um número e um caractere especial.";
+
+            } else {
+                mensagemSenha.innerText = "";
+            }
+        })
+
+        confirmacao.addEventListener('input', () => {
+
+            let infoConfirmacao = confirmacao.value;
+
+            if(infoConfirmacao !== senha.value){
+                mensagemConfirmacao.innerText = "A senha deve ser idêntica a anterior.";
+            } else {
+                mensagemConfirmacao.innerText = "";
+            }
+        })
+
+     
+
+        olho.addEventListener('click', () => {
+
+            if(senha.getAttribute('type') == 'password'){
+                senha.setAttribute('type', 'text');
+                
+            } else {
+                senha.setAttribute('type', 'password');
+                
+            }
+        })
+
+        olhoConf.addEventListener('click', () => {
+            if(confirmacao.getAttribute('type') == 'password') {
+                confirmacao.setAttribute('type', 'text');
+            } else {
+                confirmacao.setAttribute('type','password')
+            }
+        })
+
+        botao.addEventListener('click', () => {
+            location.reload();
+        })
+
+    </script>
+    
+</body>
+</html>

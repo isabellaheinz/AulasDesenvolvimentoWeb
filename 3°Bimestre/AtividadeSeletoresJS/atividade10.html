@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        img {
+            margin-top: 150px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 4px  rgba(128, 128, 128, 0.199);
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 8px 20px;
+            border-radius: 10px;
+            border: 2px solid rgba(128, 128, 128, 0.199);
+            box-shadow: 0px 0px 4px  rgba(128, 128, 128, 0.199);
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="https://picsum.photos/id/240/600/400" alt="">
+
+    <div class="botoes">
+        <button id="anterior">Imagem Anterior</button>
+        <button id="seguinte">Imagem Seguinte</button>
+    </div>
+    
+    <script>
+
+        const imagem = document.querySelector("img");
+        const btnAnterior = document.querySelector("#anterior");
+        const btnSeguinte = document.querySelector("#seguinte");
+
+        const imagens = [
+        "https://picsum.photos/id/237/600/400",
+        "https://picsum.photos/id/238/600/400",
+        "https://picsum.photos/id/239/600/400",
+        "https://picsum.photos/id/240/600/400"
+        ];
+
+        let indice = 0;
+
+        function mudarImagem(){
+                
+            if (indice >= imagens.length){
+                    indice = 0;
+                } else if (indice < 0) {
+                indice = 3;
+            }
+
+            imagem.src = imagens[indice];
+        }
+
+        let tempo;
+
+        function timer(){
+            clearInterval(tempo);
+
+            tempo = setInterval( () => {
+                indice++;
+                mudarImagem();
+            }, 2000);
+        }
+        
+
+        btnAnterior.addEventListener('click', () => {
+            indice--
+            mudarImagem();
+            timer();
+        })
+
+        btnSeguinte.addEventListener('click', () => {
+            indice++
+            mudarImagem();
+            timer();
+        })
+
+        timer();
+
+
+          
+
+
+    </script>
+</body>
+</html>

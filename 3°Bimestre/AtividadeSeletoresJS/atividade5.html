@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5</title>
+
+    <style>
+        .inicio {
+            margin-left: 25%;
+            width: 50%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        ul {
+            margin-left: 30%;
+        }
+
+        button {
+            padding: 8px 20px;
+            border-radius: 10px;
+            border: 2px solid rgba(128, 128, 128, 0.199);
+            box-shadow: 0px 0px 4px  rgba(128, 128, 128, 0.199)
+        }
+    </style>
+</head>
+<body>
+    <div class="inicio">
+        <h1>Lista de elementos: </h1>
+        <button>Adicionar item a lista</button>
+    </div>
+    
+
+    <ul id="lista">
+    </ul>
+
+    <script>
+        const botao = document.querySelector("button"); 
+        const ul = document.querySelector("#lista")
+
+        let contador = 1;
+
+        botao.addEventListener('click' , () => {
+            
+            const liNovo = document.createElement("li");
+            const conteudo =  'Item n° ' + contador;
+            liNovo.textContent = conteudo;
+            ul.appendChild(liNovo);
+            contador++
+
+        })
+
+    </script>
+    
+</body>
+</html>

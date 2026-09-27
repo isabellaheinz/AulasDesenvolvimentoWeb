@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7</title>
+
+    <style>
+
+        .container {
+            margin-top: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            width: 500px;
+            height: 500px;
+        }
+
+        button {
+            padding: 8px 20px;
+            border-radius: 10px;
+            border: 2px solid rgba(128, 128, 128, 0.199);
+            box-shadow: 0px 0px 4px  rgba(128, 128, 128, 0.199);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+         <img 
+            src="https://static.wikia.nocookie.net/disney/images/d/dd/Waddles_the_Pig.jpg/revision/latest?cb=20160710192404&path-prefix=pt-br" alt="">
+    
+    <p></p>
+
+    <button>Trocar Imagem</button>
+
+    </div>
+   
+
+    <script>
+
+        let paragrafo = document.querySelector('p');
+        let imagem = document.querySelector('img');
+        let botao = document.querySelector('button');
+
+        imagem.onclick = clicou;
+        imagem.onmouseenter = mouseEnter;
+        imagem.onmousemove = mouseMove;
+        imagem.onmouseleave = mouseLeave;
+
+        function clicou(){
+            paragrafo.textContent = "Para de me cutucar!";
+        }
+
+        function mouseEnter(){
+            paragrafo.textContent = "Para de me mousar!";
+        }
+
+        function mouseMove(){
+            paragrafo.textContent = "Para de me fazer carinho!";
+        }
+
+        function mouseLeave(){
+            paragrafo.textContent = "Não saia!";
+        }
+
+        botao.addEventListener('click', () => {
+            
+            if (imagem.src == "https://static.wikia.nocookie.net/disney/images/d/dd/Waddles_the_Pig.jpg/revision/latest?cb=20160710192404&path-prefix=pt-br") {
+
+                imagem.src = "https://upload.wikimedia.org/wikipedia/en/4/4b/Mabel_Pines.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original";
+
+            } else if (imagem.src == "https://upload.wikimedia.org/wikipedia/en/4/4b/Mabel_Pines.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original") {
+
+                imagem.src = "https://static.wikia.nocookie.net/disney/images/d/dd/Waddles_the_Pig.jpg/revision/latest?cb=20160710192404&path-prefix=pt-br";
+
+            }
+        })
+
+    </script>
+</body>
+</html>

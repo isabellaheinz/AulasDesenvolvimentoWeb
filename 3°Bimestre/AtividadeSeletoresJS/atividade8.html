@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8</title>
+
+    <style>
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15%;
+        }
+
+        .container input {
+            width: 300px;
+            height: 40px;
+            padding: 8px 20px;
+            border-radius: 10px;
+            border: 2px solid rgba(128, 128, 128, 0.199);
+            box-shadow: 0px 0px 4px  rgba(128, 128, 128, 0.199);
+            transition: all 0.5s;
+        }
+
+        .container #mensagem {
+            margin-top: 20px;
+            padding: 8px 20px;
+            border-radius: 10px;
+        }
+
+        .container input:focus {
+            border: 2px solid rgba(128, 128, 128, 0.405);
+            outline: none;
+        }
+        .sucesso {
+            background-color: green;
+            color: white;
+            box-shadow: 0px 0px 4px  rgba(128, 128, 128, 0.199);
+        }
+
+        .erro {
+            background-color: red;
+            color: white;
+            box-shadow: 0px 0px 4px  rgba(128, 128, 128, 0.199);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <input type="text" value="" required="true" placeholder="Informe seu texto">
+        <div id="mensagem"></div>
+    </div>
+   
+
+
+    <script>
+        const campoTexto = document.querySelector("input")
+        const mensagem = document.querySelector("#mensagem")
+
+        campoTexto.addEventListener("input", () => {
+            
+            let digitado = campoTexto.value
+            mensagem.classList.remove("erro")
+            mensagem.classList.remove("sucesso")
+
+            if(digitado.length > 3) {
+                
+                if(digitado == "chocolate"){
+                    mensagem.innerText = "Meu sabor de sorvete favorito!!" 
+                    mensagem.classList.add("sucesso")
+                } else if(digitado == "flocos") {
+                    mensagem.innerText = "Flocos é bom demais!!"
+                    mensagem.classList.add("sucesso")
+                } else {
+                    mensagem.innerText = "Ahh, eu esperava um sabor de sorvete..."
+                    mensagem.classList.add("erro")
+                }
+
+            } else {
+                mensagem.innerText = "Insira um texto maior que 3 caracteres."
+            }
+             
+        })
+    </script>
+</body>
+</html>
